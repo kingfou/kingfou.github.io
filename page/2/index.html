@@ -438,7 +438,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2 Action获取表单属性/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2文件上传2（自定义提示消息）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -460,8 +460,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/02/struts2 Action获取表单属性/" itemprop="url">
-                  Action三种获取表单的模式
+                <a class="post-title-link" href="/2017/03/02/struts2文件上传2（自定义提示消息）/" itemprop="url">
+                  自定义错误消息
                 </a>
               
             
@@ -559,28 +559,26 @@
       
         
           
-            <p>1.我们写的Action当继承了ActionSupport的时候，它会自动获取提交到该action的请求里面的表单数据，会缓存起来，如何获取呢？它的底层已经利用架构或者其他的配置文件，doj4等技术，只要我们的Action类里的属性名和表单的name标签的名字一样的时候，同时在Action里的属性有setter和getter的时候会自动获取，这个和我们的Spring的依赖注入很类似。<br>2.通过一个implements ModelDriven<t>接口来实例化封装的表单的数据。</t></p>
-<ul>
-<li>3.详细解释：</li>
-<li><ol>
-<li>域驱动：就是将表单的属性名称在action里面按照依赖注入的形式填充完成，这时候的成功因素就是Action里面的属性要和表单的name属性一致</li>
+            <p>1.ServletActionContext.getServletContext().getRealPath(“/“)可以直接获得当前项目的真实路径。</p>
+<ol>
+<li>一个result代表了一个可能的输出。当Action类的方法执行完成时，它返回一个字符串类型的结果码，框架根据这个结果码选择对应的result，向用户输出。<br>在com.opensymphony.xwork2.Action接口中定义了一组标准的结果代码，可供开发人员使用，当然了只有我们的action继承ActionSupport 这个类才可以使用下面的结果代码，如下所示：</li>
 </ol>
-</li>
-<li><ol>
-<li>属性驱动，所谓的属性驱动就是先将表单的提交信息封装好，成一个pojo，我们在action里的属性现在就是pojo,设置好pojo的setter和getter就行，在jsp页面写的就是pojo实例的属性。例如：</li>
-</ol>
-<p>`private User user;<br>setter;getter;</p>
-<p>form;//表单形式<br>name=”user.name”;<br>name=”user.password”</p>
-</li>
-</ul>
-<p>  POJO://POJO类<br>  User{<br> name;<br>  password;<br>  }`</p>
-<p>表单的user会自动去寻找Action对应的属性user的，就是表单逆向寻找Action的属性。</p>
-<ul>
-<li>3.模型驱动，modelDriven接口的实现，我们一开始就实现接口:<br>`<br>implements ModelDriven<user><br>{<br>private User user;<br>  Uer getModel(){//覆写方法<pre><code>if(user==null){
-    user=new User();
-}
-</code></pre>  }<br>}`<br>//这样就是自动的驱动我们的模型完成数据填充。</user></li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public interface Action</div><div class="line">&#123;</div><div class="line">    public static final String SUCCESS = “success”;</div><div class="line">    public static final String NONE = “none”;</div><div class="line">    public static final String ERROR = “error”;</div><div class="line">    public static final String INPUT = “input”;</div><div class="line">    public static final String LOGIN = “login”;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   其中 Struts2应用在运行过程中若发现addFieldError()中有信息或者类型转换失败或着输入校验失败等情况<br>那么它会自动跳转到name为input的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;result/&gt;</div></pre></td></tr></table></figure></p>
+<p>，然后转到INPUT所对应的页面<br>若JSP页面中表单是用普通<form>编写的，发生错误而返回该页面时，则原数据将消失<br>若JSP页面中表单是用<s:form>编写的，发生错误而返回该页面时，则原数据仍存在<br>若没有提供name值为input的<result>，那么发生错误时，将直接在浏览器中提示404错误<br>  除了这些预定义的结果码外，开发人员也可以定义其它的结果码来满足自身应用程序的需<br>要。</result></s:form></form></p>
+<p>3.由上面的笔记我们可以知道，默认的返回字符串是success,input,error,none,login这些。。。</p>
+<p>3.修改默认的消息返回配置：<br><img src="![](http://i1.piimg.com/567571/7e6ece76f8a6ad01.jpg" alt="image"></p>
+<p>4.在我们的struts的核心包下面有一个配置文件default-properties,这个配置文件是无法直接修改的，但是里面是我们可以配置的所有的常量的集合，我们在struts,xml文件里面配置的常量其实在这里是全部可以直接找到的。在这下面还有很多的配置文件，比如struts-message这个配置文件，里面就有当信息出错是加载的常量属性。<br>struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} “{1}” “{2}” {3}  这一段是在类型不允许的时候显示的，其中，0,1,2,3是文件的详细情况。文件名和文件类型什么的。<br>我们写了一个配置文件赋值给一个常量，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;constant name=&quot;struts.custom.i18n.resources&quot; value=&quot;msg&quot;&gt;&lt;/constant&gt;</div></pre></td></tr></table></figure></p>
+<p>这个配置文件完成的时候，他会把struts-message里面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">struts.messages.error.content.type.not.allowed=Content-Type not allowed: &#123;0&#125; &quot;&#123;1&#125;&quot; &quot;&#123;2&#125;&quot; &#123;3&#125;</div></pre></td></tr></table></figure></p>
+<p>直接换成msg.properties下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">struts.messages.error.content.type.not.allowed=\u60A8\u4E0A\u4F20\u7684\u6587\u4EF6\&#123;0&#125; &#123;1&#125; &#123;2&#125; &#123;3&#125;\u7C7B\u578B\u6709\u8BEF</div></pre></td></tr></table></figure></p>
+<p>这一切，其实就是将一个常量直接等于一个配置文件，配置文件自己再为常量赋值？？？？</p>
+<p>5.每次使用自己写的拦截器的时候，一定要自己再手动加默认的拦截器栈。</p>
+<p>6.文件上传的时候，对文件的格式，文件的大小一起其他的限制，我们可以直接在fileUpload这个拦截器里面直接配置好就行，必要的时候，可以自己配置文件不符合限制的时候的提示消息，这个消息的常量在我们的struts-messgae里面找到对应的属性，将此属性直接在自己写的配置文件里赋给新的提示消息值，之后将此配置文件赋值给对应的常量。</p>
+<p>具体流程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.找到struts-message文件里面对应的属性，例如文件类型错误：</div><div class="line">struts.messages.error.content.type.not.allowed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2.将此属性copy到自己的配置文件里重新赋值：</div><div class="line">struts.messages.error.content.type.not.allowed=？？？？？</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3.在我们的struts.xml配置文件里配置常量：</div><div class="line">&lt;constant name=&quot;struts.custom.i18n.resources&quot; value=&quot;msg&quot;&gt;&lt;/constant&gt;</div><div class="line">这个msg就是我们自己的消息提示配置文件，</div><div class="line">我们将这个配置文件赋值给到这个常量就行。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4.这样当文件不符合的时候就会提示我们自定义的消息了。</div></pre></td></tr></table></figure>
 
           
         
