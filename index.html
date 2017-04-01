@@ -376,6 +376,17 @@
 		
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于作者
+          </a>
+        </li>
+		
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -410,10 +421,44 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
 	  
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -1279,6 +1324,177 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2的文件上传与下载/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kingfou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林金福个人网站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/02/struts2的文件上传与下载/" itemprop="url">
+                  struts2文件上传
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T22:14:01+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三大架构/" itemprop="url" rel="index">
+                    <span itemprop="name">三大架构</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三大架构/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三大架构/笔记/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.文件上传是在表单中完成的。表单提交到一个action里面，在action里面，我们开始对提交的文件进行操作。<br>2.两个重要的属性的setter和getter，我们在html页面写的file 标签的名字要和Action里的名字是对应的。比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;post&quot; action=&quot;url&quot; enctype=&quot;multipart/form-data&quot;</div><div class="line">&lt;input type=&quot;file&quot; name=&quot;newname&quot;/&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样的话，我们可以得到上传文件的类型和名称，其中属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 1.newnameFileName(html的名字+FileName) </div><div class="line">- 2.newnameContentType(html的名字+ContentType)</div></pre></td></tr></table></figure>
+<p>这样就可以直接获取上传文件的名称和类型。</p>
+<p>2.Action代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   </div><div class="line">   private File photo;</div><div class="line">private String photoFileName;</div><div class="line">private String photoContentType;</div></pre></td></tr></table></figure></p>
+<p>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">	文件上传：&lt;input type=&quot;file&quot; name=&quot;photo&quot; /&gt;&lt;br/&gt;</div><div class="line">	&lt;input type=&quot;submit&quot; value=&quot;提交&quot; &gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2 Action获取表单属性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1629,7 +1845,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2的文件上传与下载/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2文件上传2（自定义提示消息）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -1651,8 +1867,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/02/struts2的文件上传与下载/" itemprop="url">
-                  struts2文件上传
+                <a class="post-title-link" href="/2017/03/02/struts2文件上传2（自定义提示消息）/" itemprop="url">
+                  自定义错误消息
                 </a>
               
             
@@ -1750,216 +1966,26 @@
       
         
           
-            <p>1.文件上传是在表单中完成的。表单提交到一个action里面，在action里面，我们开始对提交的文件进行操作。<br>2.两个重要的属性的setter和getter，我们在html页面写的file 标签的名字要和Action里的名字是对应的。比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;post&quot; action=&quot;url&quot; enctype=&quot;multipart/form-data&quot;</div><div class="line">&lt;input type=&quot;file&quot; name=&quot;newname&quot;/&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样的话，我们可以得到上传文件的类型和名称，其中属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 1.newnameFileName(html的名字+FileName) </div><div class="line">- 2.newnameContentType(html的名字+ContentType)</div></pre></td></tr></table></figure>
-<p>这样就可以直接获取上传文件的名称和类型。</p>
-<p>2.Action代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   </div><div class="line">   private File photo;</div><div class="line">private String photoFileName;</div><div class="line">private String photoContentType;</div></pre></td></tr></table></figure></p>
-<p>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</div><div class="line">	文件上传：&lt;input type=&quot;file&quot; name=&quot;photo&quot; /&gt;&lt;br/&gt;</div><div class="line">	&lt;input type=&quot;submit&quot; value=&quot;提交&quot; &gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2实现Ajax技术/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kingfou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林金福个人网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/02/struts2实现Ajax技术/" itemprop="url">
-                  struts2实现ajax
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T22:14:01+08:00">
-                2017-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/" itemprop="url" rel="index">
-                    <span itemprop="name">三大架构</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/笔记/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/笔记/学习/AJAX/" itemprop="url" rel="index">
-                    <span itemprop="name">AJAX</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>1.Ajax是什么，怎么实现？</li>
-<li><ol>
-<li>使用JQuery的方法实现</li>
+            <p>1.ServletActionContext.getServletContext().getRealPath(“/“)可以直接获得当前项目的真实路径。</p>
+<ol>
+<li>一个result代表了一个可能的输出。当Action类的方法执行完成时，它返回一个字符串类型的结果码，框架根据这个结果码选择对应的result，向用户输出。<br>在com.opensymphony.xwork2.Action接口中定义了一组标准的结果代码，可供开发人员使用，当然了只有我们的action继承ActionSupport 这个类才可以使用下面的结果代码，如下所示：</li>
 </ol>
-</li>
-<li><ol>
-<li>使用html的方法实现</li>
-</ol>
-</li>
-<li>JSON:在JQuery里面，我们提供了两种实现的方法</li>
-<li><ol>
-<li>load(URL,data,callback);其url是请求的url，也就是要访问的服务的地址，data是请求的参数，可以为空，也可以带请求参数，最后的是一个回调函数，请求的数据直接放在回调函数里面。回调函数的构造类型如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">可选的 callback 参数规定当 load() 方法完成后所要允许的回调函数。回调函数可以设置不同的参数：</div><div class="line">responseTxt - 包含调用成功时的结果内容</div><div class="line">statusTXT - 包含调用的状态</div><div class="line">xhr - 包含 XMLHttpRequest 对象</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>2.$.get(URL,callback); 这是使用jquery的方法写的ajax,回调函数的使用如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function(data,status)</div><div class="line">第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。</div></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>$.post(URL,data,callback);这个的用法和get是一样的，只是它可以带有自己的请求参数，也就是将页面的某个属性直接赋值后请求，例如直接请求id是多少的某个属性。</li>
-</ol>
-</li>
-<li></li>
-</ul>
-<p>2.使用我们的struts实现ajax的时候，要手动导入另外的两个包。一个是struts提供的JSON插件支持包，另外一个就是JSON的包，它提供将对象直接字符串化的方法，这样才可以直接在action里面放回字符串的请求结果。<br>此外，我们的struts配置内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;package name=&quot;root1&quot; namespace=&quot;/&quot; extends=&quot;json-default&quot; &gt;</div><div class="line">&lt;!-- 实现AJAX的Action配置 --&gt;</div><div class="line">	&lt;action name=&quot;ajax&quot; class=&quot;com.imook.action.AjaxAction&quot;&gt;</div><div class="line">	&lt;result name=&quot;success&quot; type=&quot;json&quot;&gt;&lt;/result&gt;</div><div class="line">	&lt;/action&gt;</div><div class="line">	</div><div class="line">&lt;/package&gt;</div></pre></td></tr></table></figure></p>
-<p>这里的json-default包其实就是我们的struts-josn的插件。这个是请求的数据是对象的时候；</p>
-<p>3.请求的是集合的时候。其实原理是一样的，就是请求后在html页面得到的那个数据其实四一个集合的字符串，我们可以先得到该对象，之后进行遍历就可以得到我们想过的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public interface Action</div><div class="line">&#123;</div><div class="line">    public static final String SUCCESS = “success”;</div><div class="line">    public static final String NONE = “none”;</div><div class="line">    public static final String ERROR = “error”;</div><div class="line">    public static final String INPUT = “input”;</div><div class="line">    public static final String LOGIN = “login”;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   其中 Struts2应用在运行过程中若发现addFieldError()中有信息或者类型转换失败或着输入校验失败等情况<br>那么它会自动跳转到name为input的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;result/&gt;</div></pre></td></tr></table></figure></p>
+<p>，然后转到INPUT所对应的页面<br>若JSP页面中表单是用普通<form>编写的，发生错误而返回该页面时，则原数据将消失<br>若JSP页面中表单是用<s:form>编写的，发生错误而返回该页面时，则原数据仍存在<br>若没有提供name值为input的<result>，那么发生错误时，将直接在浏览器中提示404错误<br>  除了这些预定义的结果码外，开发人员也可以定义其它的结果码来满足自身应用程序的需<br>要。</result></s:form></form></p>
+<p>3.由上面的笔记我们可以知道，默认的返回字符串是success,input,error,none,login这些。。。</p>
+<p>3.修改默认的消息返回配置：<br><img src="![](http://i1.piimg.com/567571/7e6ece76f8a6ad01.jpg" alt="image"></p>
+<p>4.在我们的struts的核心包下面有一个配置文件default-properties,这个配置文件是无法直接修改的，但是里面是我们可以配置的所有的常量的集合，我们在struts,xml文件里面配置的常量其实在这里是全部可以直接找到的。在这下面还有很多的配置文件，比如struts-message这个配置文件，里面就有当信息出错是加载的常量属性。<br>struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} “{1}” “{2}” {3}  这一段是在类型不允许的时候显示的，其中，0,1,2,3是文件的详细情况。文件名和文件类型什么的。<br>我们写了一个配置文件赋值给一个常量，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;constant name=&quot;struts.custom.i18n.resources&quot; value=&quot;msg&quot;&gt;&lt;/constant&gt;</div></pre></td></tr></table></figure></p>
+<p>这个配置文件完成的时候，他会把struts-message里面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">struts.messages.error.content.type.not.allowed=Content-Type not allowed: &#123;0&#125; &quot;&#123;1&#125;&quot; &quot;&#123;2&#125;&quot; &#123;3&#125;</div></pre></td></tr></table></figure></p>
+<p>直接换成msg.properties下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">struts.messages.error.content.type.not.allowed=\u60A8\u4E0A\u4F20\u7684\u6587\u4EF6\&#123;0&#125; &#123;1&#125; &#123;2&#125; &#123;3&#125;\u7C7B\u578B\u6709\u8BEF</div></pre></td></tr></table></figure></p>
+<p>这一切，其实就是将一个常量直接等于一个配置文件，配置文件自己再为常量赋值？？？？</p>
+<p>5.每次使用自己写的拦截器的时候，一定要自己再手动加默认的拦截器栈。</p>
+<p>6.文件上传的时候，对文件的格式，文件的大小一起其他的限制，我们可以直接在fileUpload这个拦截器里面直接配置好就行，必要的时候，可以自己配置文件不符合限制的时候的提示消息，这个消息的常量在我们的struts-messgae里面找到对应的属性，将此属性直接在自己写的配置文件里赋给新的提示消息值，之后将此配置文件赋值给对应的常量。</p>
+<p>具体流程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.找到struts-message文件里面对应的属性，例如文件类型错误：</div><div class="line">struts.messages.error.content.type.not.allowed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2.将此属性copy到自己的配置文件里重新赋值：</div><div class="line">struts.messages.error.content.type.not.allowed=？？？？？</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3.在我们的struts.xml配置文件里配置常量：</div><div class="line">&lt;constant name=&quot;struts.custom.i18n.resources&quot; value=&quot;msg&quot;&gt;&lt;/constant&gt;</div><div class="line">这个msg就是我们自己的消息提示配置文件，</div><div class="line">我们将这个配置文件赋值给到这个常量就行。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4.这样当文件不符合的时候就会提示我们自定义的消息了。</div></pre></td></tr></table></figure>
 
           
         
@@ -2315,6 +2341,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问游客
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -2441,6 +2487,132 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
 
 
 
