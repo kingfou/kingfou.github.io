@@ -10,9 +10,9 @@
 
     
     <entry>
-      <title><![CDATA[关于使用hexo搭建自己的博客]]></title>
-      <url>%2F2017%2F03%2F29%2Fhexo%2F</url>
-      <content type="text"><![CDATA[环境的搭建 1.介绍：我们使用的这个博客生成器，其实是一个台湾大学生创建的，它的环境是主流的node.js,因此，我们需要先配置好node.js环境，node.js的安装自己百度就可以很快搞定，它有windows,linux，mac都有。使用这个hexo我们可以很简单的创建一个很炫酷的个人博客哦。 2.安装好node.js后，我们需要安装hexo,安装的指令是，在我们的命令窗口，输入： npm install hexo -g这个表示在这个环境里面安装好博客生成器。之后我们就可以使用简单的命令生成自己的博客了。 3.首先，在一个文件夹里面，按住shift 后右键，选择在此打开cmd,输入：hexo init,这样就生成了一个简单的博客需要的所有配置文件，再使用hexo g这样就生成了一个博客，使用hexo s启动博客，在自己打的浏览器输入cmd里面的地址可以看到一个 HEXO 的博客页面。 修改自己的博客 1.搭建好自己的博客后，需要修改很多的内容来进行自己的优化，主要是修改两个配置文件，一个是站目录下面的配置文件，另外一个是主题目录下的配置文件。这两个文件的配置可以使得你的hexo主题改变很大。 2.站目录下的配置文件主要是配置我们项目发布到github的参数，在这个配置文件的最下面配置，注意我们使用的hexo版本，我使用的是3.0好像，这个版本在上传文件的时候，下面的代码： deploy: type: git repository: https://github.com/kingfou/kingfou.github.io.git branch: master 2.配置好后，将文件上传到我们的github上面，首先你要自己先在github上面注册和申请好自己的仓库，很简单的。自己百度。之后的操作就是：hexo d如果报错，请用github的 shell命令器cmd到自己的博客站目录下面 hexo d。如果提醒没有初始化什么的，直接git init,之后就可以了。 3.关于自己对主题的一些修改，这些都得在主题的那个配置文件里面自己一个一个慢慢设置，我使用的是next这款主题，十分炫酷。直接上next的官网就可以看到怎么修改一些内容。]]></content>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F03%2F29%2FHello-World-0%2F</url>
+      <content type="text"></content>
     </entry>
 
     
@@ -24,9 +24,9 @@
 
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F03%2F29%2FHello-World-0%2F</url>
-      <content type="text"></content>
+      <title><![CDATA[关于使用hexo搭建自己的博客]]></title>
+      <url>%2F2017%2F03%2F29%2Fhexo%2F</url>
+      <content type="text"><![CDATA[环境的搭建 1.介绍：我们使用的这个博客生成器，其实是一个台湾大学生创建的，它的环境是主流的node.js,因此，我们需要先配置好node.js环境，node.js的安装自己百度就可以很快搞定，它有windows,linux，mac都有。使用这个hexo我们可以很简单的创建一个很炫酷的个人博客哦。 2.安装好node.js后，我们需要安装hexo,安装的指令是，在我们的命令窗口，输入： npm install hexo -g这个表示在这个环境里面安装好博客生成器。之后我们就可以使用简单的命令生成自己的博客了。 3.首先，在一个文件夹里面，按住shift 后右键，选择在此打开cmd,输入：hexo init,这样就生成了一个简单的博客需要的所有配置文件，再使用hexo g这样就生成了一个博客，使用hexo s启动博客，在自己打的浏览器输入cmd里面的地址可以看到一个 HEXO 的博客页面。 修改自己的博客 1.搭建好自己的博客后，需要修改很多的内容来进行自己的优化，主要是修改两个配置文件，一个是站目录下面的配置文件，另外一个是主题目录下的配置文件。这两个文件的配置可以使得你的hexo主题改变很大。 2.站目录下的配置文件主要是配置我们项目发布到github的参数，在这个配置文件的最下面配置，注意我们使用的hexo版本，我使用的是3.0好像，这个版本在上传文件的时候，下面的代码： deploy: type: git repository: https://github.com/kingfou/kingfou.github.io.git branch: master 2.配置好后，将文件上传到我们的github上面，首先你要自己先在github上面注册和申请好自己的仓库，很简单的。自己百度。之后的操作就是：hexo d如果报错，请用github的 shell命令器cmd到自己的博客站目录下面 hexo d。如果提醒没有初始化什么的，直接git init,之后就可以了。 3.关于自己对主题的一些修改，这些都得在主题的那个配置文件里面自己一个一个慢慢设置，我使用的是next这款主题，十分炫酷。直接上next的官网就可以看到怎么修改一些内容。]]></content>
     </entry>
 
     
@@ -34,13 +34,6 @@
       <title><![CDATA[ssh总结1]]></title>
       <url>%2F2017%2F03%2F10%2Fssh%E6%95%B4%E5%90%88%E6%80%BB%E7%BB%93%EF%BC%9A%2F</url>
       <content type="text"><![CDATA[1.理解：我们在项目里，本来是有三个配置文件要写的， 1.struts.xml：负责对action和访问的Action进行匹配，并且会根据Action的返回结果进行页面的跳转操作，在struts.xml里面，要注意的就是跳转的形式，result type的取值又很多，比如我们的json形式就是加入json插件又的一种同时，在struts.xml里面，我们还要注意的是action对Action里面方法的访问的写法；struts里面也定义了很多的拦截器，如果我们使用了自定义的拦截器的话，那么在访问该Action的时候，我们需要手动的去调用默认的拦截器栈。还有就是我们的常量的配置，可以起到很多的作用，比如自定义的错误消息的提醒，启用一些其他属性。这个可以查我们的default-struts这个配置文件，里面又所有的常量。 2.applicationContext.xml：1.这个配置文件是我们spring里面的配置文件，它的作用就是进行bean的注入，EJB,企业级java bean ，也就是说，将对bean的实例化等操作直接在配置文件里面完成。在ssh里面，我们也是直接的使用这个bean.xml来对我们的struts.xml和beans.xml进行整合的；1.对struts进行整合，就是将Action类的实例化的工作直接交给到我们的beans.xml，这时候在配置我们的action的时候，class=”id”,这个id就是我们在beans..xml里面的id,2.对hibernate进行整合：我们会将hibernate配置文件的内容直接都在这个beans.xml里面进行配置，这时候，我们的Dao类需要继承一个类，HibernateDaoSupport类，这个类继承后需要我们在beans.xml里面进行一些属性的配置，毕竟是继承来的，有很多的属性是需要配置的。 1.配置数据源，数据源可以写在一个新的peoperties文件里，我们在beans.xml里面直接读取赋值就可以，beans.xml读取其他的配置文件时候，要加入一个常量的配置： &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt; 这句话表示我们会加载src目录下面的配置文件，之后对数据源进行配置，内容如下： ` 注意这个bean的包所在；就是我们引进来c3p0的jar包； 2.配置sessionFactory会话工厂：也就是对数据库的最高级操作，这个是一个重量级的 对象，一般我们只会实例化一次， 之后，它就接管数据库的链接管理， 使用数据库的时候，直接调用它提供的openSession()就可以得到一次岁数据库的操作。。 注意这个bean里需要配置以下三个属性值： 1.dataSource: 2.hibernateProperties:这个文件主要配饰hibernate对于的数据库类型和sql语句的一些显示，表的自动创建等： 由于这些属性是本来就存在的，因此我们属于的是properties文件的属性的注入形式： &lt;props&gt; &lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/prop&gt; &lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt; &lt;prop key=&quot;hibernate.format_sql&quot;&gt;true&lt;/prop&gt; &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt; &lt;/props&gt; 3.mappingResources:这个配置的是我们的domain类的关系映射文件，由于关系映射文件有多个， 因此需要用&lt;list&gt;标签列出来： &lt;list&gt; &lt;value&gt;com/imooc/domain/Product.hbm.xml&lt;/value&gt; ..... &lt;/list&gt; 12 接下来我们讲一下，为什么在继承了HibernateDaoSupport这个类的时候，我们就要去配置这个sesionFactory这个类：首先查看我们的HibernateDaoSupport的源码，我们知道，在这个源码里，它提供了一个HibernateTemplate对象，这个就是我们在dao进行hibernate操作的根本。但是这个对象的实例化，也就是创建,需要传入一个sessionFactory,它里面有这个sessionFactory的setter方法了，我们可以在beans.xml里面直接注入就行。整个流程：1.使用HibernateDaoSupport需要配置一个bean-sessionFactory,这个bean在hibernate核心包里面，这个类里面我们要配置三个属性：数据源，hibernateProperties,mappingResource这三个属性，其中，由于hibetrnateProperties的属性是存在的，采用的是props标签，而mappingResource里的关系映射文件是用list标签来写的。 3.hibernate.cfg.xml：这个文件虽然被beans.xml整合了，但是独立的话，它的作用就是配置数据源，配置数据库的类型，配置数据库sql语言，管理关系映射文件。之后在类里通过加载这个配置文就可以得到一个sessionFactory了。12 总结：总的来说，我们最好的整合方法就是将所有的类的实例化，属性的注入等工作交给beans.xml文件，这时候，我们的hibernate的配置等全部是在这个文件立面完成的，也就是说没有了hibernate.cfg.xml文件，而action的关系映射就直接在struts.xml立面完成。使用struts和spring之前，在web.xml立面，也有很重要的配置需要记住，那就是：1.struts核心过滤器的配置： &lt;filter&gt; &lt;filter-name&gt;struts&lt;/filter-name&gt; &lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt; &lt;/filter&gt; &lt;filter-mapping&gt; &lt;filter-name&gt;struts&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;/filter-mapping&gt; 2.spring 监听器的配置： &lt;listener&gt; &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt; &lt;/listener&gt; &lt;context-param&gt; &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt; &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt; &lt;/context-param&gt; 说说这个ContextLoaderListener的作用：它的作用就是在web启动的时候 自动的去加载我们的beans.xml配置文件，不过在默认的情况下下， 他会去加载WEB-INFO下面的applicationContext.xml这个配置文件 ，因此，如果我们的配置文件在src目录下的话，我们就需要制定加载配置文件的所在路径，需要使用到下面的标签： &lt;context-param&gt; &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt; &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt; &lt;/context-param&gt; ```]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[struts2文件上传]]></title>
-      <url>%2F2017%2F03%2F02%2Fstruts2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD%2F</url>
-      <content type="text"><![CDATA[1.文件上传是在表单中完成的。表单提交到一个action里面，在action里面，我们开始对提交的文件进行操作。2.两个重要的属性的setter和getter，我们在html页面写的file 标签的名字要和Action里的名字是对应的。比如 123&lt;form method=&quot;post&quot; action=&quot;url&quot; enctype=&quot;multipart/form-data&quot;&lt;input type=&quot;file&quot; name=&quot;newname&quot;/&gt;&lt;/form&gt; 这样的话，我们可以得到上传文件的类型和名称，其中属性： 12- 1.newnameFileName(html的名字+FileName) - 2.newnameContentType(html的名字+ContentType) 这样就可以直接获取上传文件的名称和类型。 2.Action代码：1234 private File photo;private String photoFileName;private String photoContentType; html代码：1234&lt;form action=&quot;upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt; 文件上传：&lt;input type=&quot;file&quot; name=&quot;photo&quot; /&gt;&lt;br/&gt; &lt;input type=&quot;submit&quot; value=&quot;提交&quot; &gt;&lt;/form&gt;]]></content>
     </entry>
 
     
@@ -55,6 +48,13 @@
       <title><![CDATA[ssh之搭建环境]]></title>
       <url>%2F2017%2F03%2F02%2Fssh%E4%B9%8B%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%2F</url>
       <content type="text"><![CDATA[配置文件的理解 1.struts.xml：负责对action和访问的Action进行匹配，并且会根据Action的返回结果进行页面的跳转操作，在struts.xml里面，要注意的就是跳转的形式，result type的取值又很多，比如我们的json形式就是加入json插件又的一种同时，在struts.xml里面，我们还要注意的是action对Action里面方法的访问的写法；struts里面也定义了很多的拦截器，如果我们使用了自定义的拦截器的话，那么在访问该Action的时候，我们需要手动的去调用默认的拦截器栈。还有就是我们的常量的配置，可以起到很多的作用，比如自定义的错误消息的提醒，启用一些其他属性。这个可以查我们的default-struts这个配置文件，里面又所有的常量。 2.applicationContext.xml：1.这个配置文件是我们spring里面的配置文件，它的作用就是进行bean的注入，EJB,企业级java bean ，也就是说，将对bean的实例化等操作直接在配置文件里面完成。在ssh里面，我们也是直接的使用这个bean.xml来对我们的struts.xml和beans.xml进行整合的；1.对struts进行整合，就是将Action类的实例化的工作直接交给到我们的beans.xml，这时候在配置我们的action的时候，class=”id”,这个id就是我们在beans..xml里面的id,2.对hibernate进行整合：我们会将hibernate配置文件的内容直接都在这个beans.xml里面进行配置，这时候，我们的Dao类需要继承一个类，HibernateDaoSupport类，这个类继承后需要我们在beans.xml里面进行一些属性的配置，毕竟是继承来的，有很多的属性是需要配置的。 1.配置数据源，数据源可以写在一个新的peoperties文件里，我们在beans.xml里面直接读取赋值就可以，beans.xml读取其他的配置文件时候，要加入一个常量的配置： &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot; /&gt;这句话表示我们会加载src目录下面的配置文件，之后对数据源进行配置，内容如下：&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt; ` &lt;property name=&quot;driverClass&quot; value=&quot;${jdbc.driverClass}&quot;/&gt; &lt;property name=&quot;jdbcUrl&quot; value=&quot;${jdbc.url}&quot;/&gt; &lt;property name=&quot;user&quot; value=&quot;${jdbc.username}&quot;/&gt; &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt; `]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[struts2文件上传]]></title>
+      <url>%2F2017%2F03%2F02%2Fstruts2%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD%2F</url>
+      <content type="text"><![CDATA[1.文件上传是在表单中完成的。表单提交到一个action里面，在action里面，我们开始对提交的文件进行操作。2.两个重要的属性的setter和getter，我们在html页面写的file 标签的名字要和Action里的名字是对应的。比如 123&lt;form method=&quot;post&quot; action=&quot;url&quot; enctype=&quot;multipart/form-data&quot;&lt;input type=&quot;file&quot; name=&quot;newname&quot;/&gt;&lt;/form&gt; 这样的话，我们可以得到上传文件的类型和名称，其中属性： 12- 1.newnameFileName(html的名字+FileName) - 2.newnameContentType(html的名字+ContentType) 这样就可以直接获取上传文件的名称和类型。 2.Action代码：1234 private File photo;private String photoFileName;private String photoContentType; html代码：1234&lt;form action=&quot;upload&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt; 文件上传：&lt;input type=&quot;file&quot; name=&quot;photo&quot; /&gt;&lt;br/&gt; &lt;input type=&quot;submit&quot; value=&quot;提交&quot; &gt;&lt;/form&gt;]]></content>
     </entry>
 
     
