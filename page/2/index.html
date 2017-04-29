@@ -483,7 +483,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/29/ssh整合之页面：标签/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/29/IO之文件的读取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -505,8 +505,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/29/ssh整合之页面：标签/" itemprop="url">
-                  ssh之值栈
+                <a class="post-title-link" href="/2017/03/29/IO之文件的读取/" itemprop="url">
+                  IO流的复习--文件的读取
                 </a>
               
             
@@ -545,8 +545,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ssh架构学习/" itemprop="url" rel="index">
-                    <span itemprop="name">ssh架构学习</span>
+                  <a href="/categories/io/" itemprop="url" rel="index">
+                    <span itemprop="name">io</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/io/file/" itemprop="url" rel="index">
+                    <span itemprop="name">file</span>
                   </a>
                 </span>
 
@@ -582,13 +593,12 @@
       
         
           
-          1.pageContext.request.contextPath获得的是项目的名称。比如：  /ssh_manager  前面有一个斜杠。
-2.ssh的思想就是访问的是我们的action而不是直接的jsp，这样的话，你要学会在一个Action里面去处理很多的jsp请求。
-3.模型驱动的值会默认放在
+          1.使用BufferedReader对文件进行读取使用这个类的好处是可以调用它的一个读取一行的方法。ReadLine();而且BufferedReader本来就是用来读取字符流的，这样可以直接避免中文乱码的出现。具体的代码如下:
+BufferedReader buf=new BufferedRead
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/29/ssh整合之页面：标签/#more" rel="contents">
+            <a class="btn" href="/2017/03/29/IO之文件的读取/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
