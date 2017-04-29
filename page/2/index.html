@@ -1000,7 +1000,7 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2 Action获取表单属性/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/ssh之搭建环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -1022,8 +1022,8 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
             
               
                 
-                <a class="post-title-link" href="/2017/03/02/struts2 Action获取表单属性/" itemprop="url">
-                  Action三种获取表单的模式
+                <a class="post-title-link" href="/2017/03/02/ssh之搭建环境/" itemprop="url">
+                  ssh之配置文件理解
                 </a>
               
             
@@ -1062,18 +1062,7 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/" itemprop="url" rel="index">
-                    <span itemprop="name">三大架构</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/笔记/" itemprop="url" rel="index">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
                     <span itemprop="name">笔记</span>
                   </a>
                 </span>
@@ -1084,7 +1073,7 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三大架构/笔记/学习/" itemprop="url" rel="index">
+                  <a href="/categories/笔记/学习/" itemprop="url" rel="index">
                     <span itemprop="name">学习</span>
                   </a>
                 </span>
@@ -1121,11 +1110,12 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
       
         
           
-          1.我们写的Action当继承了ActionSupport的时候，它会自动获取提交到该action的请求里面的表单数据，会缓存起来，如何获取呢？它的底层已经利用架构或者其他的配置文件，doj4等技术，只要我们的Action类里的属性名和表单的name标签的名字一样的时候，同时在Action里的属性有
+          配置文件的理解
+1.struts.xml：负责对action和访问的Action进行匹配，并且会根据Action的返回结果进行页面的跳转操作，在struts.xml里面，要注意的就是跳转的形式，result type的取值又很多，比如我们的json形式就是加入json插件又的一种同时，在struts
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/02/struts2 Action获取表单属性/#more" rel="contents">
+            <a class="btn" href="/2017/03/02/ssh之搭建环境/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1515,7 +1505,7 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/ssh之搭建环境/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/02/struts2 Action获取表单属性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -1537,8 +1527,8 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
             
               
                 
-                <a class="post-title-link" href="/2017/03/02/ssh之搭建环境/" itemprop="url">
-                  ssh之配置文件理解
+                <a class="post-title-link" href="/2017/03/02/struts2 Action获取表单属性/" itemprop="url">
+                  Action三种获取表单的模式
                 </a>
               
             
@@ -1577,7 +1567,18 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                  <a href="/categories/三大架构/" itemprop="url" rel="index">
+                    <span itemprop="name">三大架构</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三大架构/笔记/" itemprop="url" rel="index">
                     <span itemprop="name">笔记</span>
                   </a>
                 </span>
@@ -1588,7 +1589,7 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/学习/" itemprop="url" rel="index">
+                  <a href="/categories/三大架构/笔记/学习/" itemprop="url" rel="index">
                     <span itemprop="name">学习</span>
                   </a>
                 </span>
@@ -1625,12 +1626,11 @@ load(URL,data,callback);其url是请求的url，也就是要访问的服务的�
       
         
           
-          配置文件的理解
-1.struts.xml：负责对action和访问的Action进行匹配，并且会根据Action的返回结果进行页面的跳转操作，在struts.xml里面，要注意的就是跳转的形式，result type的取值又很多，比如我们的json形式就是加入json插件又的一种同时，在struts
+          1.我们写的Action当继承了ActionSupport的时候，它会自动获取提交到该action的请求里面的表单数据，会缓存起来，如何获取呢？它的底层已经利用架构或者其他的配置文件，doj4等技术，只要我们的Action类里的属性名和表单的name标签的名字一样的时候，同时在Action里的属性有
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/02/ssh之搭建环境/#more" rel="contents">
+            <a class="btn" href="/2017/03/02/struts2 Action获取表单属性/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
