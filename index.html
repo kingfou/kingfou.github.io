@@ -817,133 +817,6 @@ Collection是最基本的集合接口，一个Collection代表一组Object，即
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/04/29/SortedSet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kingfou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="林金福个人网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/29/SortedSet/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-29T10:31:26+08:00">
-                2017-04-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/29/SortedSet/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/04/26/IO类了解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1785,7 +1658,7 @@ import java.io.RandomAccessFile;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/29/hexo/">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/29/IO之文件的读取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kingfou">
@@ -1807,8 +1680,8 @@ import java.io.RandomAccessFile;
             
               
                 
-                <a class="post-title-link" href="/2017/03/29/hexo/" itemprop="url">
-                  关于使用hexo搭建自己的博客
+                <a class="post-title-link" href="/2017/03/29/IO之文件的读取/" itemprop="url">
+                  IO流的复习--文件的读取
                 </a>
               
             
@@ -1847,8 +1720,8 @@ import java.io.RandomAccessFile;
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/io/" itemprop="url" rel="index">
+                    <span itemprop="name">io</span>
                   </a>
                 </span>
 
@@ -1858,19 +1731,8 @@ import java.io.RandomAccessFile;
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/github仓库/" itemprop="url" rel="index">
-                    <span itemprop="name">github仓库</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/github仓库/hexo安装/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo安装</span>
+                  <a href="/categories/io/file/" itemprop="url" rel="index">
+                    <span itemprop="name">file</span>
                   </a>
                 </span>
 
@@ -1906,11 +1768,12 @@ import java.io.RandomAccessFile;
       
         
           
-          环境的搭建- 1.介绍：我们使用的这个博客生成器，其实是一个台湾大学生创建的，它的环境是主流的node.js,因此，我们需要先配置好node.js环境，node.js的安装自己百度就可以很快搞定，它有windows,linux，mac都有。使用这个hexo我们可以很简单的创建一个很炫酷的个人博客哦。
+          1.使用BufferedReader对文件进行读取使用这个类的好处是可以调用它的一个读取一行的方法。ReadLine();而且BufferedReader本来就是用来读取字符流的，这样可以直接避免中文乱码的出现。具体的代码如下:
+BufferedReader buf=new BufferedRead
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/29/hexo/#more" rel="contents">
+            <a class="btn" href="/2017/03/29/IO之文件的读取/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2109,6 +1972,177 @@ OutputStream ot=new FileOutputStream(&quot;e:\\myeclipse 2015 workplace\\testfil
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://kingfou.github.io/2017/03/29/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kingfou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林金福个人网站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/29/hexo/" itemprop="url">
+                  关于使用hexo搭建自己的博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T20:44:45+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/github仓库/" itemprop="url" rel="index">
+                    <span itemprop="name">github仓库</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/github仓库/hexo安装/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo安装</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          环境的搭建- 1.介绍：我们使用的这个博客生成器，其实是一个台湾大学生创建的，它的环境是主流的node.js,因此，我们需要先配置好node.js环境，node.js的安装自己百度就可以很快搞定，它有windows,linux，mac都有。使用这个hexo我们可以很简单的创建一个很炫酷的个人博客哦。
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/29/hexo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -2158,7 +2192,7 @@ OutputStream ot=new FileOutputStream(&quot;e:\\myeclipse 2015 workplace\\testfil
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
